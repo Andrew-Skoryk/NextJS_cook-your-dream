@@ -26,6 +26,10 @@ const config = {
       },
     ],
   },
+  ignorePatterns: [
+    "prisma/client.js",
+    "*.js",
+  ]
 };
 
 module.exports = config;

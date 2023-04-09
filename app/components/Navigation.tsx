@@ -1,11 +1,11 @@
 import Link from "next/link";
 import Image from "next/image";
-import { type FC } from "react";
-import NavLink from "./NavLink";
+import NavLink from "./UI/NavLink";
+import UserNavButton from "./UserNavButton";
 
-const Navigation: FC = () => {
+function Navigation() {
   return (
-    <nav className="mb-10 flex items-center justify-between border-b-8 border-yellow-50 p-8">
+    <nav className="mb-10 flex items-center justify-between bg-yellow-50 p-8">
       <Link
         href="/"
         className="flex items-center rounded-xl p-2 transition-colors duration-300 hover:bg-yellow-200 active:bg-yellow-500"
@@ -22,7 +22,7 @@ const Navigation: FC = () => {
         </h1>
       </Link>
 
-      <ul className="mr-32 flex space-x-3 text-green-800">
+      <ul className="mr-32 flex items-center space-x-1 text-green-800">
         <li>
           <NavLink href="/">Home</NavLink>
         </li>
@@ -39,14 +39,12 @@ const Navigation: FC = () => {
           <NavLink href="/blog">Blog</NavLink>
         </li>
         <li>
-          <NavLink href="/aboutus">About us</NavLink>
+          <NavLink href="/aboutus">All recipes</NavLink>
         </li>
-        <li>
-          <NavLink href="/search">Search</NavLink>
-        </li>
+        <UserNavButton />
       </ul>
     </nav>
   );
-};
+}
 
 export default Navigation;
