@@ -10,12 +10,12 @@ type Props = LinkProps & {
 };
 
 const NavLink = ({ href, children }: PropsWithChildren<Props>) => {
-  const path = usePathname() as string;
+  const path = usePathname();
   const [isActive, setIsActive] = useState(false);
 
   useEffect(() => {
     const linkPathname = new URL(href, location.href).pathname;
-    const activePathname = new URL(path, location.href).pathname;
+    const activePathname = new URL(path!, location.href).pathname;
     setIsActive(linkPathname === activePathname);
   }, [href, path]);
   
