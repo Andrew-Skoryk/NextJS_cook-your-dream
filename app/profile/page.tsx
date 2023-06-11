@@ -5,23 +5,15 @@ import {
   currentUser,
   UserProfile,
 } from "@clerk/nextjs/app-beta";
+import { clerkAppearance } from "app/components/UI/clerkAppearance";
 
 export const metadata: Metadata = {
   title: "Profile",
-  description: "This page contain user management interface",
+  description: "This page contains user management interface",
 };
 
 async function Profile() {
   const user = await currentUser();
-  const clerkAppearance = {
-    variables: {
-      colorPrimary: "rgb(234 179 80)",
-      colorText: "rgb(20 83 45)",
-      fontFamily: "Lora",
-      fontSize: "1.3rem",
-      colorBackground: "rgb(254 252 232)",
-    },
-  };
 
   return (
     <section className="mb-20 flex flex-col">
@@ -34,7 +26,7 @@ async function Profile() {
         </>
       ) : (
         <article>
-          <Heading>Please sign in</Heading>
+          <Heading>Please sign-in</Heading>
           <SignIn appearance={clerkAppearance} />
         </article>
       )}
