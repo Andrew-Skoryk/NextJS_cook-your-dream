@@ -1,6 +1,6 @@
 import Heading from "app/components/UI/Heading";
 import type { Metadata } from "next";
-import { SignIn, currentUser } from "@clerk/nextjs/app-beta";
+import { currentUser, SignUp } from "@clerk/nextjs/app-beta";
 import { clerkAppearance } from "app/components/UI/clerkAppearance";
 import { redirect } from "next/navigation";
 
@@ -19,8 +19,8 @@ async function Profile() {
   return (
     <section className="mb-20 flex flex-col">
       <article>
-        <Heading>Please sign-in</Heading>
-        <SignIn appearance={clerkAppearance} />
+        <Heading>Please fill form</Heading>
+        <SignUp appearance={clerkAppearance} />
       </article>
     </section>
   );
