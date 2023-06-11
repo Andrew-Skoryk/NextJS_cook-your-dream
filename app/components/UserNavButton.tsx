@@ -14,7 +14,7 @@ function UserNavButton() {
       <SignedIn>
         <UserButton
           userProfileMode="navigation"
-          userProfileUrl="profile"
+          userProfileUrl="/profile"
           appearance={{
             ...clerkAppearance,
             elements: { userButtonAvatarBox: "h-14 w-14" },
